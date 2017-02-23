@@ -29,6 +29,7 @@ const PORT = 8080;
 //create the server and have it listen on our PORT
 var server = http.createServer();
 server.listen(PORT);
+console.log("Waiting for a connection...");
 
 //Define our main function to call the scripts
 var runScripts = function(){
@@ -54,7 +55,7 @@ io.listen(server).on('connection', function(socket){
   //Log that we have a connection
   console.log("The server and web page are connected!");
 
-  //
+  //sends a message to the html page and runs the checks
   var autoRun = function(){
     socket.emit("#");
     runChecks();

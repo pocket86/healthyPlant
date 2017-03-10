@@ -13,10 +13,21 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     
     <script type="text/javascript" src="healthyPlant.js"></script>
+    <script type="text/javascript" src="./node_modules/socket.io-client/dist/socket.io.js"></script>
 
 </head>
 
 <body>
+
+    <!-- Script to connect to the node server -->
+    <script>
+        var socket = io.connect("localhost:8080");
+
+        //on 'connect', log the connection in the console
+        socket.on("connect", function(){
+            console.log("Connected to the server!");
+        });
+    </script>
 
     <!-- Top Nav Bar -->
     <div class="top-nav">

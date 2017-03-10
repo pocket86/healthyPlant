@@ -1,1 +1,0 @@
-//this will be the humidity python script

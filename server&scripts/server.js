@@ -43,10 +43,10 @@ var runScripts = function(){
   console.log("Scripts are running -  " + timestamp);
 
   //Run each script
-  exec("#", puts);
-  exec("#", puts)
-  exec("#", puts);
-  exec("#", puts);
+ // exec("#", puts);
+ // exec("#", puts)
+ // exec("#", puts);
+ // exec("#", puts);
 };
 
 //have the server listen for a connection with the web page
@@ -82,28 +82,28 @@ io.listen(server).on('connection', function(socket){
   * data can be sent
   **********************************************/
 
-  fs.watchFile("#", function() {
-      var text = fs.readFileSync("#").toString();
+  fs.watchFile("temp_humid/temp.txt", function() {
+      var text = fs.readFileSync("temp_humid/temp.txt").toString();
       var check = {status: text, id: "#"};
       socket.emit("check", check);
   });
 
-  fs.watchFile("#", function() {
-      var text = fs.readFileSync("#").toString();
+  fs.watchFile("temp_humid/humid.txt", function() {
+      var text = fs.readFileSync("temp_humid/humid.txt").toString();
       var check = {status: text, id: "#"};
       socket.emit("check", check);
   });
 
-  fs.watchFile("#", function() {
-      var text = fs.readFileSync("#").toString();
-      var check = {status: text, id: "#"};
-      socket.emit("check", check);
-  });
+ // fs.watchFile("#", function() {
+ //     var text = fs.readFileSync("#").toString();
+ //     var check = {status: text, id: "#"};
+ //     socket.emit("check", check);
+ // });
 
-  fs.watchFile("#", function() {
-      var text = fs.readFileSync("#").toString();
-      var check = {status: text, id: "#"};
-      socket.emit("check", check);
-  });
+ // fs.watchFile("#", function() {
+ //     var text = fs.readFileSync("#").toString();
+ //     var check = {status: text, id: "#"};
+ //     socket.emit("check", check);
+ // });
 
 });

@@ -9,8 +9,9 @@ function router(id){
 
 
 
-function temprature(){
-    
+function tempCheck(){
+   console.log("In the temp check function");
+   socket.emit("temp");
 }
 
 function humidity(){

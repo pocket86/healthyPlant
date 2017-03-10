@@ -48,8 +48,8 @@ temperature = temperature * 9/5.0 + 32
 # guarantee the timing of calls to read the sensor).
 # If this happens try again!
 if humidity is not None and temperature is not None:
-    tempFile = open('temp.txt', 'w')
-    humidFile = open('humid.txt', 'w')
+    tempFile = open('temp_humid/temp.txt', 'w')
+    humidFile = open('temp_humid/humid.txt', 'w')
    
     tempFile.write('{0:0.1f}'.format(temperature))
     humidFile.write('{0:0.1f}'.format(humidity))

@@ -65,14 +65,10 @@ io.listen(server).on('connection', function(socket){
   var timer = setInterval(autoRun, 600000);
 
   //Web page button press allows a manual running of the scripts
-  socket.on("#", function(){
+  socket.on("temp", function(){
     //reset the timer
-    clearInterval(timer);
-    timer = setInterval(autoRun, 600000);
-
-    //tell the webpage to reset it's data
     socket.emit("#");
-    runChecks();
+    exec("sudo python temp_humid/temp_humid.py 11 4", puts);
   });
 
   /**********************************************

@@ -65,7 +65,7 @@ io.listen(server).on('connection', function(socket){
   var timer = setInterval(autoRun, 600000);
 
   //Web page button press allows a manual running of the scripts
-  socket.on("temp", function(){
+  socket.on("runChecks", function(){
     //reset the timer
     socket.emit("#");
     exec("sudo python temp_humid/temp_humid.py 11 4", puts);

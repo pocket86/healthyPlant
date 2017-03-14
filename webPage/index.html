@@ -31,12 +31,8 @@
         //This will listen for a reponse from the server after each check
         socket.on("check", function(check){
            console.log("Got the check!");
-           var id = check.id;
-           if(id === "tempData"){
-              updateTemp(check);
-           } else if(id === "humidData"){
-              updateHumid(check);
-           }
+           //send the check to the function router
+           router(check);
         });
     </script>
 

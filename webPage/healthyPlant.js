@@ -2,7 +2,7 @@
 * This function will route the element to be 
 * updated based off the id passed in from the server
 *****************************************************/
-function router(id){
+function router(check){
 
    console.log("Router function...");
 
@@ -10,6 +10,10 @@ function router(id){
       updateTemp(check);
    } else if (check.id === "humidData"){
       updateHumid(check);
+   } else if (check.id === "moistureData"){
+       updateMoisture(check);
+   } else if (check.id === "lightData"){
+       updateLight(check);
    }
 }
 
@@ -26,6 +30,6 @@ function updateLight(check){
     console.log("updateLight function...");
 }
 
-function updateMiosture(check){
+function updateMoisture(check){
     console.log("updateMiosture function...");
 }

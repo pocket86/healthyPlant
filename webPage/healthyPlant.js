@@ -4,18 +4,16 @@
 *****************************************************/
 function router(id){
 
-   console.log("Router function...);
+   console.log("Router function...");
 
    if(check.id === "tempData"){
       updateTemp(check);
-   } else if (check.id === "humidData){
+   } else if (check.id === "humidData"){
       updateHumid(check);
    }
 }
 
-
-
-
+/*********** UPDATE FUNCTIONS **************/
 function updateTemp(check){
    console.log("updateTemp function...");
 }
@@ -24,10 +22,10 @@ function updateHumid(check){
     console.log("updateHumid function...");
 }
 
-function light(){
-    
+function updateLight(check){
+    console.log("updateLight function...");
 }
 
-function moisture(){
-    
+function updateMiosture(check){
+    console.log("updateMiosture function...");
 }

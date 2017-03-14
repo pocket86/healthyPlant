@@ -79,14 +79,15 @@ io.listen(server).on('connection', function(socket){
   **********************************************/
 
   fs.watchFile("temp_humid/temp.txt", function() {
-      var text = fs.readFileSync("temp_humid/temp.txt").toString();
-      var check = {status: text, id: "#"};
+      var temp = fs.readFileSync("temp_humid/temp.txt").toString();
+      var check = {temp: temp, id: "tempData"};
       socket.emit("check", check);
   });
 
   fs.watchFile("temp_humid/humid.txt", function() {
-      var text = fs.readFileSync("temp_humid/humid.txt").toString();
-      var check = {status: text, id: "#"};
+      console.log("Detected a change in the humid.txt...");
+      var humid = fs.readFileSync("temp_humid/humid.txt").toString();
+      var check = {humid: humid, id: "humidData"};
       socket.emit("check", check);
   });
 

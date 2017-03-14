@@ -3,19 +3,25 @@
 * updated based off the id passed in from the server
 *****************************************************/
 function router(id){
-    
+
+   console.log("Router function...);
+
+   if(check.id === "tempData"){
+      updateTemp(check);
+   } else if (check.id === "humidData){
+      updateHumid(check);
+   }
 }
 
 
 
 
-function tempCheck(){
-   console.log("In the temp check function");
-   socket.emit("temp");
+function updateTemp(check){
+   console.log("updateTemp function...");
 }
 
-function humidity(){
-    
+function updateHumid(check){
+    console.log("updateHumid function...");
 }
 
 function light(){

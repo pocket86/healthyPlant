@@ -31,7 +31,12 @@ var server = http.createServer();
 server.listen(PORT);
 console.log("Waiting for a connection...");
 
-//Define our main function to call the scripts
+
+/*******************************************************************
+* Runs each sensor script
+* Input  - none
+* Output - none
+*******************************************************************/
 var runScripts = function(){
   //create a timestamp to put with each script run (for logs, mainly)
   var date = new Date();
@@ -43,10 +48,10 @@ var runScripts = function(){
   console.log("Scripts are running -  " + timestamp);
 
   //Run each script
- // exec("#", puts);
- // exec("#", puts)
- // exec("#", puts);
- // exec("#", puts);
+  exec("sudo python temp_humid/temp_humid.py 11 4", puts);
+  //exec("#", puts)
+  //exec("#", puts);
+  //exec("#", puts);
 };
 
 //have the server listen for a connection with the web page
@@ -68,7 +73,7 @@ io.listen(server).on('connection', function(socket){
   socket.on("runChecks", function(){
     //reset the timer
     socket.emit("#");
-    exec("sudo python temp_humid/temp_humid.py 11 4", puts);
+    runScripts();
   });
 
   /**********************************************

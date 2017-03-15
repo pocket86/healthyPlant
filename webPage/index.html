@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     
-    <script type="text/javascript" src="healthyPlant.js"></script>
+    <script language="JavaScript" src="healthyPlant.js"></script>
     <script type="text/javascript" src="./node_modules/socket.io-client/dist/socket.io.js"></script>
 
 </head>
@@ -64,16 +64,36 @@
     <div class="content">
         <h1 id="contentHeader"> How is my plant today?</h1>
         <img id="plantPic" src="resources/plant2.png">
-        <div class="spacer-border"></div>
-        
+        <div class="btnBox">
+            <button class="checkBtn" onclick="runChecks">Manual Update</button>
+        </div>
+        <div class="border-box">
+            <div class="border-spacer"></div>
+            <div class="spacer-border"></div>
+            <div class="border-spacer"></div>
+        </div>
         
         <div class="data">
-            <div class="dataItem" id="mainTemp">Temp
-               <button onclick="tempCheck()">Check Temp</button>
+            <div class="dataItem" id="mainTemp">
+               <div class="spacer"></div>
+                <div class="dataBox">Temp</div>
+                <div class="spacer"></div>
             </div>
-            <div class="dataItem" id="mainHumid">Humidity</div>
-            <div class="dataItem" id="mainLight">Light</div>
-            <div class="dataItem" id="mainMoist">Moisture</div>
+            <div class="dataItem" id="mainHumid">
+                <div class="spacer"></div>
+                <div class="dataBox">Humidity</div>
+                <div class="spacer"></div>
+            </div>
+            <div class="dataItem" id="mainLight">
+                <div class="spacer"></div>
+                <div class="dataBox">Temp</div>
+                <div class="spacer"></div>
+            </div>
+            <div class="dataItem" id="mainMoist">
+                <div class="spacer"></div>
+                <div class="dataBox">Moisture</div>
+                <div class="spacer"></div>            
+            </div>
         </div>
         
     </div>

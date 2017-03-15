@@ -17,13 +17,19 @@ function router(check){
    }
 }
 
+function runChecks(){
+   socket.emit("runChecks");
+}
+
 /*********** UPDATE FUNCTIONS **************/
 function updateTemp(check){
    console.log("updateTemp function...");
+   document.getElementById("mainTemp").innerHTML = check.temp;
 }
 
 function updateHumid(check){
     console.log("updateHumid function...");
+    document.getElementById('mainHumid').innerHTML = check.humid;
 }
 
 function updateLight(check){

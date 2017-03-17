@@ -5,10 +5,10 @@ CREATE TABLE plants { -- add the two extreems lowest and highest
    id         SERIAL PRIMARY KEY
 ,  name       TEXT NOT NULL
 ,  sci_name   TEXT
-,  best_temp  TEXT NOT NULL
-,  best_humid TEXT NOT NULL
-,  best_light TEXT NOT NULL
-,  best_moist TEXT NOT NULL
+,  temp_id    INT  REFERENCES temp(id)
+,  humid_id   INT  REFERENCES humid
+,  light_id   INT  REFERENCES light(id)
+,  moist_id   INT  REFERENCES moist(id)
 };
 
 CREATE TABLE readings {
@@ -20,6 +20,27 @@ CREATE TABLE readings {
 ,  moisture  INT
 ,  last_read DATE
 };
+
+CREATE TABLE temp {
+   id            SERIAL PRIMARY KEY
+,  highest_temp  INT
+,  best_temp     INT
+,  lowest_temp   INT
+}
+
+CREATE TABLE light {
+   id     SERIAL PRIMARY KEY
+,  high_light   INT
+,  best_light   INT
+,  lowest_light INT
+}
+
+CREATE TABLE moist {
+   id     SERIAL PRIMARY KEY
+,  high_moist   INT
+,  best_moist   INT
+,  lowest_moist INT
+}
 
 INSERT INTO plants 
 (name, sci_name, best_temp, best_humid, best_light, best_moist)

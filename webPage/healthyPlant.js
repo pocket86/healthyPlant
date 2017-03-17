@@ -3,7 +3,7 @@
 * updated based off the id passed in from the server
 *****************************************************/
 function router(check){
-
+    
    console.log("Router function...");
 
    if(check.id === "tempData"){

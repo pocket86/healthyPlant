@@ -25,7 +25,7 @@ CREATE TABLE readings (
 ,  light     INT
 ,  moisture  INT
 ,  last_read DATE
-,  CONSTRAINT redings_fk1 FOREIGN KEY (plant_id) REFERENCES plants (id)
+,  CONSTRAINT redings_fk1 FOREIGN KEY (plant_id) REFERENCES plants (plant_id)
 );
 
 CREATE TABLE temp (

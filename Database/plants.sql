@@ -25,7 +25,7 @@ CREATE TABLE readings (
 ,  light     INT
 ,  moisture  INT
 ,  last_read DATE
-,  CONSTRAINT redings_fk1 FOREIGN KEY (plant_id) REFERENCES plants (plant_id)
+,  FOREIGN KEY (plant_id) REFERENCES plants (id)
 );
 
 CREATE TABLE temp (
@@ -58,16 +58,16 @@ CREATE TABLE humid (
 
 /****** Add Foreign Key constr ******/
 ALTER TABLE plants
-   ADD CONSTRAINT plant_fk1 FOREIGN KEY (temp_id) REFERENCES temp (id);
+   ADD FOREIGN KEY (temp_id) REFERENCES temp (id);
 
 ALTER TABLE plants
-   ADD CONSTRAINT plant_fk2 FOREIGN KEY (humid_id) REFERENCES humid (id);
+   ADD FOREIGN KEY (humid_id) REFERENCES humid (id);
 
 ALTER TABLE plants
-   ADD CONSTRAINT plant_fk3 FOREIGN KEY (light_id) REFERENCES light (id);
+   ADD FOREIGN KEY (light_id) REFERENCES light (id);
 
 ALTER TABLE plants
-   ADD CONSTRAINT plant_fk4 FOREIGN KEY (moist_id) REFERENCES moist (id);
+   ADD FOREIGN KEY (moist_id) REFERENCES moist (id);
    
 /****** Insert into the tables ******/   
 INSERT INTO temp

@@ -25,12 +25,11 @@ CREATE TABLE readings (
 ,  light     INT
 ,  moisture  INT
 ,  last_read DATE
-,  FOREIGN KEY (plant_id) REFERENCES plants (id)
 );
 
 CREATE TABLE temp (
    id            INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
-,  highest_temp  INT
+,  high_temp  INT
 ,  best_temp     INT
 ,  lowest_temp   INT
 );
@@ -68,6 +67,9 @@ ALTER TABLE plants
 
 ALTER TABLE plants
    ADD FOREIGN KEY (moist_id) REFERENCES moist (id);
+   
+ALTER TABLE readings
+   FOREIGN KEY (plant_id) REFERENCES plants (id);
    
 /****** Insert into the tables ******/   
 INSERT INTO temp

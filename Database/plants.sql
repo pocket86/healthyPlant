@@ -7,7 +7,7 @@ DROP TABLE plants;
 DROP TABLE readings;
 
 /****** Create the tables that are needed for the database ******/
-CREATE TABLE plants { -- add the two extreems lowest and highest
+CREATE TABLE plants ( -- add the two extreems lowest and highest
    id         INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
 ,  name       CHAR(20) NOT NULL
 ,  sci_name   CHAR(255)
@@ -15,9 +15,9 @@ CREATE TABLE plants { -- add the two extreems lowest and highest
 ,  humid_id   INT
 ,  light_id   INT
 ,  moist_id   INT
-};
+);
 
-CREATE TABLE readings {
+CREATE TABLE readings (
    id        INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
 ,  plant_id  INT
 ,  temp      INT
@@ -26,35 +26,35 @@ CREATE TABLE readings {
 ,  moisture  INT
 ,  last_read DATE
 ,  CONSTRAINT redings_fk1 FOREIGN KEY (plant_id) REFERENCES plants (id)
-};
+);
 
-CREATE TABLE temp {
+CREATE TABLE temp (
    id            INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
 ,  highest_temp  INT
 ,  best_temp     INT
 ,  lowest_temp   INT
-}
+);
 
-CREATE TABLE light {
+CREATE TABLE light (
    id           INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
 ,  high_light   INT
 ,  best_light   INT
 ,  lowest_light INT
-}
+);
 
-CREATE TABLE moist {
+CREATE TABLE moist (
    id           INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
 ,  high_moist   INT
 ,  best_moist   INT
 ,  lowest_moist INT
-}
+);
 
-CREATE TABLE humid {
+CREATE TABLE humid (
    id           INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
 ,  high_humid   INT
 ,  best_humid   INT
 ,  lowest_humid INT
-}
+);
 
 /****** Add Foreign Key constr ******/
 ALTER TABLE plants

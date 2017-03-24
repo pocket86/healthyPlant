@@ -57,19 +57,19 @@ CREATE TABLE humid (
 
 /****** Add Foreign Key constr ******/
 ALTER TABLE plants
-   ADD FOREIGN KEY (temp_id) REFERENCES temp (id);
+   ADD FOREIGN KEY plants_fk1 (temp_id) REFERENCES temp (id);
 
 ALTER TABLE plants
-   ADD FOREIGN KEY (humid_id) REFERENCES humid (id);
+   ADD FOREIGN KEY plants_fk2 (humid_id) REFERENCES humid (id);
 
 ALTER TABLE plants
-   ADD FOREIGN KEY (light_id) REFERENCES light (id);
+   ADD FOREIGN KEY plants_fk3 (light_id) REFERENCES light (id);
 
 ALTER TABLE plants
-   ADD FOREIGN KEY (moist_id) REFERENCES moist (id);
+   ADD FOREIGN KEY plants_fk4 (moist_id) REFERENCES moist (id);
    
 ALTER TABLE readings
-   FOREIGN KEY (plant_id) REFERENCES plants (id);
+   FOREIGN KEY readings_fk1 (plant_id) REFERENCES plants (id);
    
 /****** Insert into the tables ******/   
 INSERT INTO temp

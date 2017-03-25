@@ -18,6 +18,7 @@ function router(check){
 }
 
 function runChecks(){
+   console.log("running checks...");
    socket.emit("runChecks");
 }
 

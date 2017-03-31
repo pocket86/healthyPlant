@@ -9,6 +9,7 @@
 
     <!-- My stylesheet -->
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="therm.css">
     <!-- Fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     
@@ -50,12 +51,14 @@
     <!-- Side Nav Bar -->
     <div class="side-nav">
         <div class="side-nav-item"></div>
-        <div class="side-nav-item">
-        
+        <div class="side-nav-item plantpicdiv">
+        <img id="plantPic" src="resources/plant2.png">
             
         
         </div>
-        <div class="side-nav-item"></div>
+        <div class="side-nav-item">
+            
+        </div>
         <div class="side-nav-link"><a class="side-link" target="_blank" href="https://github.com/pocket86/healthyPlant">Github Repo</a></div>
         
     </div>
@@ -63,12 +66,10 @@
     <!-- Main Content -->
     <div class="content">
         <h1 id="contentHeader"> How is my plant today?</h1>
-        <img id="plantPic" src="resources/plant2.png">
-         <p>Before</p>
+        
         <div class="btnBox">
             <button class="checkBtn" onclick="runChecks()">Manual Update</button>
         </div>
-         <p>After</p>
         <div class="border-box">
             <div class="border-spacer"></div>
             <div class="spacer-border"></div>
@@ -76,9 +77,28 @@
         </div>
         
         <div class="data">
+            <div class="dataItem"></div>
             <div class="dataItem" id="mainTemp">
                <div class="spacer"></div>
-                <div class="dataBox">Temp</div>
+                <div class="dataBox">
+                
+                
+                    <div class="donation-meter">
+                      <span class="glass">
+                          <strong class="tempText">65&deg;</strong>
+                          <span class="amount"></span>
+                      </span>
+                      <div class="bulb">
+                          <span class="red-circle"></span>
+                          <span class="filler">
+                              <span></span>
+                          </span>
+                      </div>
+                    </div>
+                
+                
+                
+                </div>
                 <div class="spacer"></div>
             </div>
             <div class="dataItem" id="mainHumid">
@@ -86,16 +106,13 @@
                 <div class="dataBox">Humidity</div>
                 <div class="spacer"></div>
             </div>
-            <div class="dataItem" id="mainLight">
-                <div class="spacer"></div>
-                <div class="dataBox">Temp</div>
-                <div class="spacer"></div>
-            </div>
+            
             <div class="dataItem" id="mainMoist">
                 <div class="spacer"></div>
                 <div class="dataBox">Moisture</div>
                 <div class="spacer"></div>            
             </div>
+            <div class="dataItem"></div>
         </div>
         
     </div>

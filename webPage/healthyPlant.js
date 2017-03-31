@@ -25,7 +25,22 @@ function runChecks(){
 /*********** UPDATE FUNCTIONS **************/
 function updateTemp(check){
    console.log("updateTemp function...");
-   document.getElementById("mainTemp").innerHTML = check.temp;
+   document.getElementsByClassName("tempText").innerHTML = check.temp + "&deg;";
+    //now add the changes for tempText and amount class style: bottom and height
+    var tempInt = parseInt(check.temp);
+    if(tempInt < LOW_TEMP_THRESHOLD){
+        //set class tempText attr 'bottom' to 20%
+        //set class amount attr 'height' to 20%
+        //set color of entire bar to blue
+    } else if(tempInt > HIGH_TEMP_THRESHOLD){
+        //set class tempText attr 'bottom' to 75%
+        //set class amount attr 'height' to 75%
+        //set color of entire br to red
+    } else {
+        //set class tempText attr 'bottom' to 50%
+        //set class amount attr 'height' to 50%
+        //set color of entire bar to green
+    }
 }
 
 function updateHumid(check){

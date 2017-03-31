@@ -22,6 +22,7 @@
     position: absolute;
     bottom: 5px;
     height: 50%;
+    transition: height 1s;
 }
 
 .donation-meter strong {
@@ -38,6 +39,7 @@
     position: absolute;
     right: 40px;
     bottom: 50%;
+    transition: bottom 1s;
 }
 
 .bulb {

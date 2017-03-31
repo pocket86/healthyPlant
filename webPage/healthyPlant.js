@@ -30,31 +30,39 @@ function updateTemp(check){
     var tempInt = parseInt(check.temp);
 
 
-//    if(tempInt < LOW_TEMP_THRESHOLD){
-        //set class tempText attr 'bottom' to 20%
-        //set class amount attr 'height' to 20%
+    if(tempInt < 100){
+        document.getElementById("tempText").style.bottom="25%";
+        document.getElementById("amount").style.height="25%";
         //set color of entire bar to blue
+        document.querySelectorAll('.amount, .red-circle, .filler').style.background="blue";
+    }
+    
 //    } else if(tempInt > HIGH_TEMP_THRESHOLD){
-        //set class tempText attr 'bottom' to 75%
-        //set class amount attr 'height' to 75%
-        //set color of entire br to red
+//        document.getElementById("tempText").style.bottom="75%";
+//        document.getElementById("amount").style.height="75%";
+//        //set color of entire bar to blue
+//        document.querySelectorAll('.amount, .red-circle, .filler').style.background="red";
 //    } else {
-        //set class tempText attr 'bottom' to 50%
-        //set class amount attr 'height' to 50%
-        //set color of entire bar to green
- //   }  
+//        document.getElementById("tempText").style.bottom="50%";
+//        document.getElementById("amount").style.height="50%";
+//        //set color of entire bar to blue
+//        document.querySelectorAll('.amount, .red-circle, .filler').style.background="green";
+//    }  
 }
 
 function updateHumid(check){
     console.log("updateHumid function...");
-    document.getElementById('mainHumid').innerHTML = check.humid;
+    var humidInt = parseInt(check.humid);
+    document.getElementById('mainHumid').innerHTML = humidInt;
+}
+
+function updateMoisture(check){
+    console.log("updateMiosture function...");
+    var moistInt = parseInt(check.moist);
+    document.getElementById("moistText").innerHTML = moistInt;
 }
 
 function updateLight(check){
     console.log("updateLight function...");
 }
 
-function updateMoisture(check){
-    console.log("updateMiosture function...");
-    document.getElementById("moistText").innerHTML = check.moist;
-}

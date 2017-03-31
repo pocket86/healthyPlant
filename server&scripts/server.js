@@ -49,7 +49,7 @@ var runScripts = function(){
 
   //Run each script
   exec("sudo python temp_humid/temp_humid.py 11 4", puts);
-  //exec("#", puts)
+  exec("sudo python moist/moist.py", puts)
   //exec("#", puts);
   //exec("#", puts);
 };
@@ -96,11 +96,12 @@ io.listen(server).on('connection', function(socket){
       socket.emit("check", check);
   });
 
- // fs.watchFile("#", function() {
- //     var text = fs.readFileSync("#").toString();
- //     var check = {status: text, id: "#"};
- //     socket.emit("check", check);
- // });
+  fs.watchFile("moist/moist.txt", function() {
+      console.log("Detected a change in the moisture.txt...");
+      var text = fs.readFileSync("moist/moist.txt").toString();
+      var check = {moist: text, id: "moistData"};
+      socket.emit("check", check);
+  });
 
  // fs.watchFile("#", function() {
  //     var text = fs.readFileSync("#").toString();

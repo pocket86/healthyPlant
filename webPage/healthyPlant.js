@@ -25,7 +25,7 @@ function runChecks(){
 /*********** UPDATE FUNCTIONS **************/
 function updateTemp(check){
    console.log("updateTemp function...");
-   document.getElementById("mainTemp").innerHTML = check.temp;
+   document.getElementsByClassName("tempText").innerHTML = check.temp + "&deg;";
 }
 
 function updateHumid(check){

@@ -25,7 +25,7 @@ function runChecks(){
 /*********** UPDATE FUNCTIONS **************/
 function updateTemp(check){
    console.log("updateTemp function...");
-   document.getElementsByClassName("tempText").innerHTML = check.temp + "&deg;";
+   document.getElementById("tempText").innerHTML = check.temp + "&deg;";
     //now add the changes for tempText and amount class style: bottom and height
     var tempInt = parseInt(check.temp);
     if(tempInt < LOW_TEMP_THRESHOLD){

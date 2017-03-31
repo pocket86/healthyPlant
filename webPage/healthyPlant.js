@@ -33,8 +33,11 @@ function updateTemp(check){
     if(tempInt < 100){
         document.getElementById("tempText").style.bottom="25%";
         document.getElementById("amount").style.height="25%";
-        //set color of entire bar to blue
-        document.querySelectorAll('.amount, .red-circle, .filler').style.background="blue";
+        //set color of entire bar to blue 
+	document.getElementById("amount").style.background="blue";
+	document.getElementById("red-circle").style.background="blue";
+	document.getElementById("filler").style.background="blue";
+
     }
     
 //    } else if(tempInt > HIGH_TEMP_THRESHOLD){

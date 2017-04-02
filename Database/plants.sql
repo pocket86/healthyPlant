@@ -69,7 +69,7 @@ ALTER TABLE plants
    ADD FOREIGN KEY plants_fk4 (moist_id) REFERENCES moist (id);
    
 ALTER TABLE readings
-   FOREIGN KEY readings_fk1 (plant_id) REFERENCES plants (id);
+   ADD FOREIGN KEY readings_fk1 (plant_id) REFERENCES plants (id);
    
 /****** Insert into the tables ******/   
 INSERT INTO temp

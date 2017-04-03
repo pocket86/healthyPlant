@@ -23,40 +23,50 @@ function runChecks(){
 }
 
 /*********** UPDATE FUNCTIONS **************/
-function updateTemp(check){
-   console.log("updateTemp function...");
-   document.getElementById("tempText").innerHTML = check.temp + "&deg;";
+function updateTemp(check) {
+    console.log("updateTemp function...");
+    document.getElementById("tempText").innerHTML = check.temp + "&deg;";
     //now add the changes for tempText and amount class style: bottom and height
     var tempInt = parseInt(check.temp);
-
-
-    if(tempInt < 100){
-        document.getElementById("tempText").style.bottom="25%";
-        document.getElementById("amount").style.height="25%";
+    if (tempInt < 55) {
+        document.getElementById("tempText").style.bottom = "25%";
+        document.getElementById("amount").style.height = "25%";
         //set color of entire bar to blue 
-	document.getElementById("amount").style.background="blue";
-	document.getElementById("red-circle").style.background="blue";
-	document.getElementById("filler").style.background="blue";
-
+        document.getElementById("amount").style.background = "#7FDBFF";
+        document.getElementById("red-circle").style.background = "#7FDBFF";
+        document.getElementById("filler").style.background = "#7FDBFF";
     }
-    
-//    } else if(tempInt > HIGH_TEMP_THRESHOLD){
-//        document.getElementById("tempText").style.bottom="75%";
-//        document.getElementById("amount").style.height="75%";
-//        //set color of entire bar to blue
-//        document.querySelectorAll('.amount, .red-circle, .filler').style.background="red";
-//    } else {
-//        document.getElementById("tempText").style.bottom="50%";
-//        document.getElementById("amount").style.height="50%";
-//        //set color of entire bar to blue
-//        document.querySelectorAll('.amount, .red-circle, .filler').style.background="green";
-//    }  
+    else if (tempInt > 100) {
+        document.getElementById("tempText").style.bottom = "75%";
+        document.getElementById("amount").style.height = "75%";
+        //set color of entire bar to blue
+        document.getElementById("amount").style.background = "#FF4136";
+        document.getElementById("red-circle").style.background = "#FF4136";
+        document.getElementById("filler").style.background = "#FF4136";
+    }
+    else {
+        document.getElementById("tempText").style.bottom = "50%";
+        document.getElementById("amount").style.height = "50%";
+        //set color of entire bar to blue
+        document.getElementById("amount").style.background = "#2ECC40";
+        document.getElementById("red-circle").style.background = "#2ECC40";
+        document.getElementById("filler").style.background = "#2ECC40";
+    }
 }
+
 
 function updateHumid(check){
     console.log("updateHumid function...");
     var humidInt = parseInt(check.humid);
-    document.getElementById('mainHumid').innerHTML = humidInt;
+    document.getElementById('humidText').innerHTML = humidInt;
+    
+    if(humidInt < 10){
+        document.getElementsByClassName("teardrop").style.background="lightskyblue";
+    } else if(humidInt > 50){
+        document.getElementsByClassName("teardrop").style.background="#005df4";
+    } else {
+        document.getElementsByClassName("teardrop").style.background="deepskyblue";
+    }
 }
 
 function updateMoisture(check){
@@ -65,7 +75,41 @@ function updateMoisture(check){
     document.getElementById("moistText").innerHTML = moistInt;
 }
 
-function updateLight(check){
-    console.log("updateLight function...");
-}
+/* MAY NOT USE THE LIGHT SENSOR */
+//function updateLight(check){
+//    console.log("updateLight function...");
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

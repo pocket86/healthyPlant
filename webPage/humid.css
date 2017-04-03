@@ -1,0 +1,22 @@
+.teardrop {
+    background-color: #005df4;
+    display: block;
+    width: 80px;
+    padding: 30px 20px 50px 20px;
+    margin-left: 55px;
+    height: 40px;
+    border-top-left-radius: 90px;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    position: relative;
+    box-shadow: 1px 2px 12px gray;
+    cursor: pointer;
+    transform: rotate(-45deg);
+    transition: background-color 1s ease;
+}
+
+#humidText {
+    -webkit-transform: rotate(45deg);
+    font-size: 20px;
+    font-weight: bold;
+}

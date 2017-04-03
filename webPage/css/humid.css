@@ -10,7 +10,6 @@
     border-bottom-right-radius: 90px;
     position: relative;
     box-shadow: 1px 2px 12px gray;
-    cursor: pointer;
     transform: rotate(-45deg);
     transition: background-color 1s ease;
 }

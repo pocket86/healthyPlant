@@ -72,7 +72,12 @@ function updateHumid(check){
 function updateMoisture(check){
     console.log("updateMiosture function...");
     var moistInt = parseInt(check.moist);
-    document.getElementById("moistText").innerHTML = moistInt;
+    if(moistInt){
+        var glass = document.getElementById("glass");
+        glass.style.height="250px";
+        glass.style.backgroundPosition="top left";
+        glass.style.transition="all 2s ease-out";
+    }
 }
 
 /* MAY NOT USE THE LIGHT SENSOR */

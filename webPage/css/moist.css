@@ -1,0 +1,71 @@
+#container {
+/*    background-image: rgba( 0, 0, 0, 0.10);*/
+    background: #ff8300;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    width: 250px;
+    border-left: 1px solid #ad5d01;
+    border-right: 1px solid #ad5d01;
+    border-bottom: 1px solid #ad5d01;
+    border-top: 1px solid #ad5d01;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+     clip-path: polygon(0 0, 100% 0%, 80% 100%, 20% 100%);
+    border-radius: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    padding-top: 8px;
+}
+
+#glass {
+    background: rgba( 255, 255, 255, 0.50);
+    border: 1px solid #ad5d01;
+    border-top: 1px solid #ad5d01;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 5px;
+    clip-path: polygon(0 0, 100% 0%, 80% 100%, 20% 100%);
+    margin-left: 10px;
+    border-radius: 5px;
+    width: 230px;
+    height: 210px;
+    position: relative;
+}
+#glass p{
+    margin-top: 40px;
+    padding-right: 10px;
+    font-size: 80px;
+    color: bisque
+}
+
+#water {
+    background-image: url('../resources/waves.png');
+    background-position: top right;
+    position: absolute;
+    bottom: 0px;
+    width: 300px;
+    height: 100px;
+    -webkit-transition: all 3s ease-out;
+    -moz-transition: all 3s ease-out;
+    -o-transition: all 3s ease-out;
+    transition: all 3s ease-out;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#glass:hover #water {
+    height: 250px;
+    background-position: top left;
+    -webkit-transition: all 3s ease-out;
+    -moz-transition: all 3s ease-out;
+    -o-transition: all 3s ease-out;
+    transition: all 2s ease-out;
+}
+
+#pot{
+    background-image: url('resources/plant1.jpg');
+    height: 500px;
+    width: 500px;
+}

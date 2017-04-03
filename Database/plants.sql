@@ -136,3 +136,18 @@ INSERT INTO plants
 (name, sci_name, temp_id,  humid_id,  light_id,  moist_id)
 VALUES
 ("Peace Lily", "Spathiphyllum",  1, 1, 1, 1);
+
+INSERT INTO readings
+(plant_id, temp, humidity, light, moisture, last_read)
+VALUES
+(1, 50, 20, 70, 50, 03/05/2017);
+
+INSERT INTO readings
+(plant_id, temp, humidity, light, moisture, last_read)
+VALUES
+(2, 35, 45, 70, 20, 03/09/2017);
+
+INSERT INTO readings
+(plant_id, temp, humidity, light, moisture, last_read)
+VALUES
+(1, 80, 42, 74, 56, 04/03/2017);

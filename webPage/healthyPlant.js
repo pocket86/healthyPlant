@@ -73,10 +73,10 @@ function updateMoisture(check){
     console.log("updateMiosture function...");
     var moistInt = parseInt(check.moist);
     if(moistInt){
-        var glass = document.getElementById("glass");
-        glass.style.height="250px";
-        glass.style.backgroundPosition="top left";
-        glass.style.transition="all 2s ease-out";
+        var water = document.getElementById("water");
+        water.style.height="250px";
+        water.style.backgroundPosition="top left";
+        water.style.transition="all 2s ease-out";
     }
 }
 

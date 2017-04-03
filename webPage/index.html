@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width">
     <title>Healthy Plants | plant environment data analytics </title>
     <!-- My stylesheet -->
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="therm.css">
-    <link rel="stylesheet" type="text/css" href="humid.css">
-    <link rel="stylesheet" type="text/css" href="moist.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/therm.css">
+    <link rel="stylesheet" type="text/css" href="css/humid.css">
+    <link rel="stylesheet" type="text/css" href="css/moist.css">
     <!-- Fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <script language="JavaScript" src="healthyPlant.js"></script>
@@ -37,9 +37,9 @@
         <div class="top-nav-item">Healthy Plant</div>
         <div class="top-nav-item"></div>
         <div class="top-nav-item">
-            <div class="top-nav-link"><a class="top-link" target="_blank" href="#">Link 1</a></div>
-            <div class="top-nav-link"><a class="top-link" target="_blank" href="#">Link 2</a></div>
-            <div class="top-nav-link"><a class="top-link" target="_blank" href="#">Link 3</a></div>
+            <div class="top-nav-link"><a class="top-link" target="_blank" href="#">Plant 1</a></div>
+            <div class="top-nav-link"><a class="top-link" target="_blank" href="#">Plant 2</a></div>
+            <div class="top-nav-link"><a class="top-link" target="_blank" href="#">Plant 3</a></div>
         </div>
     </div>
     <!-- Side Nav Bar -->
@@ -54,6 +54,13 @@
         <h1 id="contentHeader"> How is my plant today?</h1>
         <div class="btnBox">
             <button class="checkBtn" onclick="runChecks()">Manual Update</button>
+        </div>
+        <div class="dataHeaders">
+            <div></div>
+            <div>Temprature</div>
+            <div>Humidity</div>
+            <div>Soil Moisture</div>
+            <div></div>
         </div>
         <div class="border-box">
             <div class="border-spacer"></div>
@@ -78,24 +85,21 @@
             <div class="dataItem" id="mainHumid">
                 <div class="spacer"></div>
                 <div class="dataBox">
-                    <div class="teardrop center"><p id="humidText">20%</p></div>
-                    
+                    <div class="teardrop center">
+                        <p id="humidText">20%</p>
+                    </div>
                 </div>
                 <div class="spacer"></div>
             </div>
             <div class="dataItem" id="mainMoist">
                 <div class="spacer"></div>
                 <div class="dataBox" id="moistText">
-                
-                <div id="container">
-                    <div id="glass"><p>:(</p>
-                        <div id="water">
+                    <div id="container">
+                        <div id="glass">
+                            <p>:(</p>
+                            <div id="water"> </div>
                         </div>
-                    </div>    
-                </div>
-                
-               
-                
+                    </div>
                 </div>
                 <div class="spacer"></div>
             </div>
@@ -104,7 +108,7 @@
     </div>
     <!-- Footer -->
     <footer>
-        <div> © 2017 | Last Update: 3/21/2017 </div>
+        <div> © 2017 | Last Update: 4/2/2017 </div>
     </footer>
 </body>
 

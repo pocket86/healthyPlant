@@ -54,18 +54,3 @@
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
-
-#glass:hover #water {
-    height: 250px;
-    background-position: top left;
-    -webkit-transition: all 3s ease-out;
-    -moz-transition: all 3s ease-out;
-    -o-transition: all 3s ease-out;
-    transition: all 2s ease-out;
-}
-
-#pot{
-    background-image: url('resources/plant1.jpg');
-    height: 500px;
-    width: 500px;
-}

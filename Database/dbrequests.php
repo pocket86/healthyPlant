@@ -136,7 +136,8 @@
         <div class="data">
             <div class="dataItem"></div>
             <div class="dataItem" id="mainTemp">
-               <div class="spacer"></div>
+                <div class="spacer"></div>
+                <div class="dataBox">Temperature</div>
                 <div class="dataBox">
                 
                 
@@ -180,8 +181,7 @@
 	       echo $row['moisture'] . "</b>";
 	       echo ' - "' . $row['light'] . '"<br><br>' . $row['last_read'];
         }
-
-?>
+        ?>
         
     </div>
     <!-- Footer -->

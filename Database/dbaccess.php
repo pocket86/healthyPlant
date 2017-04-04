@@ -1,8 +1,8 @@
 <?php
 
-   $dsn = "mysql:host=localhost;dbname=plants";
-   $username = "root";
-   $password = "pass";
+   $dsn = 'mysql:host=localhost;dbname=plants';
+   $username = 'plantman';
+   $password = 'pass';
    $opt = array(
        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
    );

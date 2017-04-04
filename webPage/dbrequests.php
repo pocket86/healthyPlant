@@ -2,6 +2,32 @@
 <?php
 
     $plantID = isset($_GET['id']) ? $_GET['id'] : '';
+    
+    class Plants {
+        public $tempMin;
+        public $tempMax;
+        public $humidMin;
+        public $humidMax;
+    }
+
+    $plantInfo = new Plants();
+
+    if ($plantID != '')
+    {
+        foreach($db->query("SELECT temp_id, humid_id FROM plants WHERE id = $plantID") as $row)
+        {
+	       foreach($db->query("SELECT high_temp, lowest_temp FROM temp WHERE id = " . $row['temp_id']) as $temp)
+           {
+              foreach($db->query("SELECT high_humid, lowest_humid FROM humid WHERE id = " . $row['humid_id']) as $humid)
+              {
+                  $plantInfo->tempMin = $temp['lowest_temp'];
+                  $plantInfo->tempMax = $temp['high_temp'];
+                  $plantInfo->humidMin = $humid['lowest_humid'];
+                  $plantInfo->humidMax = $humid['high_humid'];
+              } 
+           }
+        }        
+    }
 
     if(isset($_POST['submit'])){
 		//echo "did an insert!";

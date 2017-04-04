@@ -174,7 +174,7 @@
         </div>
 
         <?php
-        foreach($db->query("SELECT temp, humidity, light, moisture, last_read  FROM readings WHERE plant_id = 1") as $row)
+        foreach($db->query("SELECT temp, humidity, light, moisture, last_read  FROM readings WHERE plant_id = $plantID") as $row)
         {
 	       echo '<b>' . $row['temp'] . ' ';
 	       echo $row['humididity'] . ':';

@@ -2,7 +2,7 @@
 
    $dsn = 'mysql:host=localhost;dbname=scriptures';
    $username = 'root';
-   $password = 'test';
+   $password = '';
    $opt = array(
        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
    );

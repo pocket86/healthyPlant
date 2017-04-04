@@ -198,6 +198,9 @@
             <div class="dataItem"></div>
         </div>
         <?php
+        
+        echo '<div> plantID = ' . $plantID . '</div>';
+        
         foreach($db->query("SELECT temp, humidity, light, moisture, last_read  FROM readings WHERE plant_id = $plantID") as $row)
         {
 	       echo '<b>' . $row['temp'] . ' ';

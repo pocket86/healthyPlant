@@ -199,7 +199,7 @@
         </div>
         <?php
         
-        echo '<div> plantID = ' . $plantID . '</div>';
+        echo "<script>console.log('plantID = " . $plantID . "');</script>";
         
         foreach($db->query("SELECT temp, humidity, light, moisture, last_read  FROM readings WHERE plant_id = $plantID") as $row)
         {

@@ -1,6 +1,6 @@
 <?php
 
-   $dsn = 'mysql:host=localhost;dbname=scriptures';
+   $dsn = 'mysql:host=localhost;dbname=plants';
    $username = 'root';
    $password = '';
    $opt = array(

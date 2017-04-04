@@ -3,14 +3,11 @@
 
     $plantID = isset($_GET['id']) ? $_GET['id'] : '';
     
-    class Plants {
-        public $tempMin;
-        public $tempMax;
-        public $humidMin;
-        public $humidMax;
-    }
-
-    $plantInfo = new Plants();
+    $tempMin;
+    $tempMax;
+    $humidMin;
+    $humidMax;
+    
 
     if ($plantID != '')
     {
@@ -20,10 +17,10 @@
            {
               foreach($db->query("SELECT high_humid, lowest_humid FROM humid WHERE id = " . $row['humid_id']) as $humid)
               {
-                  $plantInfo->tempMin = $temp['lowest_temp'];
-                  $plantInfo->tempMax = $temp['high_temp'];
-                  $plantInfo->humidMin = $humid['lowest_humid'];
-                  $plantInfo->humidMax = $humid['high_humid'];
+                  $tempMin = $temp['lowest_temp'];
+                  $tempMax = $temp['high_temp'];
+                  $humidMin = $humid['lowest_humid'];
+                  $humidMax = $humid['high_humid'];
               } 
            }
         }        

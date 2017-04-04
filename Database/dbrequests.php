@@ -56,16 +56,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width">
     <title>Healthy Plants | plant environment data analytics </title>
-
     <!-- My stylesheet -->
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="therm.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/therm.css">
+    <link rel="stylesheet" type="text/css" href="css/humid.css">
+    <link rel="stylesheet" type="text/css" href="css/moist.css">
     <!-- Fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-    
     <script language="JavaScript" src="healthyPlant.js"></script>
     <script type="text/javascript" src="./node_modules/socket.io-client/dist/socket.io.js"></script>
-
 </head>
 
 <body>
@@ -92,10 +91,6 @@
         <div class="top-nav-item">Healthy Plant</div>
         <div class="top-nav-item"></div>
         <div class="top-nav-item">
-            <!--
-            <div class="top-nav-link"><a class="top-link" target="_blank" href="#">Link 1</a></div>            
-            <div class="top-nav-link"><a class="top-link" target="_blank" href="#">Link 2</a></div>
-            <div class="top-nav-link"><a class="top-link" target="_blank" href="#">Link 3</a></div> -->
             <?php
             foreach($db->query('SELECT id, name FROM plants') as $row)
             {
@@ -123,56 +118,59 @@
     <!-- Main Content -->
     <div class="content">
         <h1 id="contentHeader"> How is my plant today?</h1>
-        
         <div class="btnBox">
             <button class="checkBtn" onclick="runChecks()">Manual Update</button>
+        </div>
+        <div class="dataHeaders">
+            <div></div>
+            <div>Temprature</div>
+            <div>Humidity</div>
+            <div>Soil Moisture</div>
+            <div></div>
         </div>
         <div class="border-box">
             <div class="border-spacer"></div>
             <div class="spacer-border"></div>
             <div class="border-spacer"></div>
         </div>
-        
         <div class="data">
             <div class="dataItem"></div>
             <div class="dataItem" id="mainTemp">
                 <div class="spacer"></div>
-                <div class="dataBox">Temperature</div>
                 <div class="dataBox">
-                
-                
-                    <div class="donation-meter">
-                      <span class="glass">
+                    <div class="donation-meter"> <span class="glass">
                           <strong class="tempText" id="tempText">65&deg;</strong>
-                          <span class="amount" id="amount"></span>
-                      </span>
-                      <div class="bulb">
-                          <span class="red-circle" id="red-circle"></span>
-                          <span class="filler" id="filler">
-                              <span></span>
-                          </span>
-                      </div>
+                          <span class="amount" id="amount"></span> </span>
+                        <div class="bulb"> <span class="red-circle" id="red-circle"></span> <span class="filler" id="filler">
+                              <span></span> </span>
+                        </div>
                     </div>
-                
-                
-                
                 </div>
                 <div class="spacer"></div>
             </div>
             <div class="dataItem" id="mainHumid">
                 <div class="spacer"></div>
-                <div class="dataBox">Humidity</div>
+                <div class="dataBox">
+                    <div class="teardrop center">
+                        <p id="humidText">20%</p>
+                    </div>
+                </div>
                 <div class="spacer"></div>
             </div>
-            
             <div class="dataItem" id="mainMoist">
                 <div class="spacer"></div>
-                <div class="dataBox" id="moistText">Moisture</div>
-                <div class="spacer"></div>            
+                <div class="dataBox" id="moistText">
+                    <div id="container">
+                        <div id="glass">
+                            <p>:(</p>
+                            <div id="water"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer"></div>
             </div>
             <div class="dataItem"></div>
         </div>
-
         <?php
         foreach($db->query("SELECT temp, humidity, light, moisture, last_read  FROM readings WHERE plant_id = $plantID") as $row)
         {
@@ -186,8 +184,8 @@
     </div>
     <!-- Footer -->
     <footer>
-        <div>
-           © 2017 | Last Update: 3/21/2017
+        <div> 
+            © 2017 | Last Update: 4/2/2017 
         </div>
     </footer>
 

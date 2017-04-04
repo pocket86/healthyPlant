@@ -2,7 +2,7 @@
 
    $dsn = "mysql:host=localhost;dbname=plants";
    $username = "root";
-   $password = "";
+   $password = "pass";
    $opt = array(
        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
    );

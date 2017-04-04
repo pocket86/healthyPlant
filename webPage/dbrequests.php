@@ -1,5 +1,8 @@
 <?php include 'dbaccess.php';?>
 <?php
+
+    $plantID = isset($_GET['id']) ? $_GET['id'] : '';
+
     if(isset($_POST['submit'])){
 		//echo "did an insert!";
 		$stmt = $db->prepare("INSERT INTO readings(plant_id, temp, humid, moist, light, last_read) VALUES(:plant, :temp, :humid, :moist, :light, :date)");
@@ -94,7 +97,7 @@
             <?php
             foreach($db->query('SELECT id, name FROM plants') as $row)
             {
-                echo"<div class='top-nav-link'><a class='top-link' target='_blank' href='#'>" . $row['name'] . "</a></div>";
+                echo"<div class='top-nav-link'><a class='top-link' target='_blank' href='dbrequests.php?varable1=". $row['id'] . "'>" . $row['name'] . "</a></div>";
             }
             ?>
         </div>
@@ -172,6 +175,7 @@
             <div class="dataItem"></div>
         </div>
         <?php
+        $plantID = 1;
         foreach($db->query("SELECT temp, humidity, light, moisture, last_read  FROM readings WHERE plant_id = $plantID") as $row)
         {
 	       echo '<b>' . $row['temp'] . ' ';

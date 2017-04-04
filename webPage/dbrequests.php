@@ -2,6 +2,8 @@
 <?php
 
     $plantID = isset($_GET['id']) ? $_GET['id'] : '';
+
+    echo "<script>console.log('plantID = " . $plantID . "');        </script>";
     
     $tempMin;
     $tempMax;

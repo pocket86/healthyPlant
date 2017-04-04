@@ -97,7 +97,7 @@
             <?php
             foreach($db->query('SELECT id, name FROM plants') as $row)
             {
-                echo"<div class='top-nav-link'><a class='top-link' target='_blank' href='dbrequests.php?varable1=". $row['id'] . "'>" . $row['name'] . "</a></div>";
+                echo"<div class='top-nav-link'><a class='top-link' href='dbrequests.php?varable1=". $row['id'] . "'>" . $row['name'] . "</a></div>";
             }
             ?>
         </div>

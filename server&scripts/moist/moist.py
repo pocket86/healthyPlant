@@ -5,5 +5,6 @@ GPIO.setup(17, GPIO.IN)
 moist = GPIO.input(17)
 moist = str(moist)
 
-moistFile = open('moist/moist.txt', 'w')
+print moist
+moistFile = open('/moist.txt', 'w')
 moistFile.write(moist)

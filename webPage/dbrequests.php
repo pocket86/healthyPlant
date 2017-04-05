@@ -39,7 +39,7 @@
 	//echo "<br>$newId";
 		
 	if($_POST['newPlant']!=''){
-		$stmt = $db->prepare("INSERT INTO plants(name, sci_name, temp_id, humid_id, light_id, moist_id) 						VALUES(:name, :sci_name, :temp, :humid, light, moist)");
+		$stmt = $db->prepare("INSERT INTO plants(name, sci_name, temp_id, humid_id, light_id, moist_id) VALUES(:name, :sci_name, :temp, :humid, :light, :moist)");
 		$stmt->bindParam(":name", $name, PDO::PARAM_STR, 20);
         $stmt->bindParam(":sci_name", $sci_name, PDO::PARAM_STR, 256);
 		$stmt->bindParam(":temp", $tempID, PDO::PARAM_INT);
@@ -85,14 +85,13 @@
         });
 
         //This will listen for a reponse from the server after each check
-        <?php
-            echo "socket.on('check' $plantID, function(check){";
+        socket.on('check' $plantID, function(check){
     
-            echo "console.log('Got the check!');";
-           //send the check to the function router
-            echo "router(check);";
-            echo "});";
-        ?>
+        console.log('Got the check!');
+        //send the check to the function router
+        router(check);
+        });
+        
     </script>
     
     <!-- Top Nav Bar -->

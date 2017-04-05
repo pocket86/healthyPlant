@@ -32,7 +32,7 @@ function updateTemp(check) {
     document.getElementById("tempText").innerHTML = check.temp + "&deg;";
     //now add the changes for tempText and amount class style: bottom and height
     var tempInt = parseInt(check.temp);
-    if (tempInt < 55) {
+    if (tempInt < tempMin) {
         document.getElementById("tempText").style.bottom = "25%";
         document.getElementById("amount").style.height = "25%";
         //set color of entire bar to blue 
@@ -40,7 +40,7 @@ function updateTemp(check) {
         document.getElementById("red-circle").style.background = "#7FDBFF";
         document.getElementById("filler").style.background = "#7FDBFF";
     }
-    else if (tempInt > 100) {
+    else if (tempInt > tempMax) {
         document.getElementById("tempText").style.bottom = "75%";
         document.getElementById("amount").style.height = "75%";
         //set color of entire bar to blue
@@ -68,9 +68,9 @@ function updateHumid(check){
     var humidInt = parseInt(check.humid);
     document.getElementById('humidText').innerHTML = humidInt + "%";
     
-    if(humidInt < 10){
+    if(humidInt < humidMin){
         document.getElementsByClassName("teardrop").style.background="lightskyblue";
-    } else if(humidInt > 50){
+    } else if(humidInt > humidMax){
         document.getElementsByClassName("teardrop").style.background="#005df4";
     } else {
         document.getElementsByClassName("teardrop").style.background="deepskyblue";

@@ -1,4 +1,7 @@
  console.log('tempMin = ' + tempMin);
+ console.log('tempMax = ' + tempMax);   
+ console.log('humidMin = ' + humidMin);   
+ console.log('humidMax = ' + humidMax);   
 
 /*****************************************************
 * This function will route the element to be 

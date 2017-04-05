@@ -2,15 +2,7 @@
 <?php
     
     $plantID = 1; // If this is the first load, pull in the first plant
-    $plantID = $_GET['varable1'];
-
-    echo "<script>console.log('plantID = " . $plantID . "');        </script>";
-    
-    $tempMin;
-    $tempMax;
-    $humidMin;
-    $humidMax;
-    
+    $plantID = $_GET['variable1'];
 
     if ($plantID != '')
     {
@@ -108,7 +100,7 @@
             <?php
             foreach($db->query('SELECT id, name FROM plants') as $row)
             {
-                echo"<div class='top-nav-link'><a class='top-link' href='dbrequests.php?varable1=". $row['id'] . "'>" . $row['name'] . "</a></div>";
+                echo"<div class='top-nav-link'><a class='top-link' href='dbrequests.php?variable1=". $row['id'] . "'>" . $row['name'] . "</a></div>";
             }
             ?>
         </div>
@@ -184,20 +176,7 @@
                 <div class="spacer"></div>
             </div>
             <div class="dataItem"></div>
-        </div>
-        <?php
-        
-        echo "<script>console.log('plantID = " . $plantID . "');</script>";
-        
-        foreach($db->query("SELECT temp, humidity, light, moisture, last_read  FROM readings WHERE plant_id = $plantID") as $row)
-        {
-	       echo '<b>' . $row['temp'] . ' ';
-	       echo $row['humididity'] . ':';
-	       echo $row['moisture'] . "</b>";
-	       echo ' - "' . $row['light'] . '"<br><br>' . $row['last_read'];
-        }
-        ?>
-        
+        </div>        
     </div>
     <!-- Footer -->
     <footer>

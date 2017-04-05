@@ -85,11 +85,14 @@
         });
 
         //This will listen for a reponse from the server after each check
-        socket.on("check", function(check){
-           console.log("Got the check!");
+        <?php
+            echo "socket.on('check' $plantID, function(check){";
+    
+            echo "console.log('Got the check!');";
            //send the check to the function router
-           router(check);
-        });
+            echo "router(check);";
+            echo "});";
+        ?>
     </script>
     
     <!-- Top Nav Bar -->

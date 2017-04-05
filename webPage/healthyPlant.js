@@ -1,10 +1,3 @@
- console.log('tempMin = ' + tempMin);
- console.log('tempMax = ' + tempMax);   
- console.log('humidMin = ' + humidMin);   
- console.log('humidMax = ' + humidMax);   
-
-console.log('here');
-
 /*****************************************************
 * This function will route the element to be 
 * updated based off the id passed in from the server
@@ -31,6 +24,10 @@ function runChecks(){
 
 /*********** UPDATE FUNCTIONS **************/
 function updateTemp(check) {
+    
+    console.log('tempMin = ' + tempMin);
+    console.log('tempMax = ' + tempMax);
+    
     console.log("updateTemp function...");
     document.getElementById("tempText").innerHTML = check.temp + "&deg;";
     //now add the changes for tempText and amount class style: bottom and height
@@ -63,6 +60,10 @@ function updateTemp(check) {
 
 
 function updateHumid(check){
+     
+    console.log('humidMin = ' + humidMin);   
+    console.log('humidMax = ' + humidMax);
+    
     console.log("updateHumid function...");
     var humidInt = parseInt(check.humid);
     document.getElementById('humidText').innerHTML = humidInt;
@@ -77,6 +78,8 @@ function updateHumid(check){
 }
 
 function updateMoisture(check){
+    
+    
     console.log("updateMiosture function...");
     var moistInt = parseInt(check.moist);
     if(moistInt){

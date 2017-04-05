@@ -94,37 +94,3 @@ function updateMoisture(check){
 //function updateLight(check){
 //    console.log("updateLight function...");
 //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

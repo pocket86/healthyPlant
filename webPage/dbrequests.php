@@ -14,7 +14,7 @@
            {
               foreach($db->query("SELECT high_humid, lowest_humid FROM humid WHERE id = " . $row['humid_id']) as $humid)
               {
-                  echo '<script>\n'
+                  /*echo '<script>\n'
                   echo "var tempMin = " . $temp['lowest_temp'] . ";\n";
                   echo "var tempMax = " . $temp['high_temp'] . ";\n";
                   echo "var humidMin = " . $humid['lowest_humid'] . ";\n";
@@ -24,7 +24,7 @@
                   echo "console.log('humidMin = ' humidMin);\n";
                   echo "console.log('humidMax = ' humidMax);\n";
                   echo '</script>/n';
-                  
+                  */
               } 
            }
         }        

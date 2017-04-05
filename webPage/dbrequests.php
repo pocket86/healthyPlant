@@ -159,7 +159,7 @@
             <div class="dataItem" id="mainHumid">
                 <div class="spacer"></div>
                 <div class="dataBox">
-                    <div class="teardrop center">
+                    <div id="teardrop center">
                         <p id="humidText">20%</p>
                     </div>
                 </div>

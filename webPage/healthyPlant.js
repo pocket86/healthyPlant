@@ -71,11 +71,11 @@ function updateHumid(check){
     document.getElementById('humidText').innerHTML = humidInt + "%";
     
     if(humidInt < humidMin){
-        document.getElementsByClassName("teardrop").style.background="lightskyblue";
+        document.getElementById("teardrop").style.backgroundColor ="lightskyblue";
     } else if(humidInt > humidMax){
-        document.getElementsByClassName("teardrop").style.background="#005df4";
+        document.getElementById("teardrop").style.backgroundColor ="#005df4";
     } else {
-        document.getElementsByClassName("teardrop").style.background="deepskyblue";
+        document.getElementById("teardrop").style.backgroundColor ="deepskyblue";
     }
 }
 

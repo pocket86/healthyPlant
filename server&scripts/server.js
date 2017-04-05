@@ -50,9 +50,9 @@ var runScripts = function(){
 
   //Run each script
   exec("sudo python temp_humid/temp_humid.py 11 4", puts);
-  exec("sudo python moist/moist.py", puts)
-  //exec("#", puts);
-  //exec("#", puts);
+  exec("sudo python moist/moist.py", puts);
+
+  exec("touch moist/moist2.txt", puts);
 };
 
 //have the server listen for a connection with the web page
@@ -63,7 +63,6 @@ io.listen(server).on('connection', function(socket){
 
   //sends a message to the html page and runs the checks
   var autoRun = function(){
-    socket.emit("#");
     runChecks();
   };
 
@@ -72,8 +71,6 @@ io.listen(server).on('connection', function(socket){
 
   //Web page button press allows a manual running of the scripts
   socket.on("runChecks", function(){
-    //reset the timer
-    socket.emit("#");
     runScripts();
   });
 
@@ -85,6 +82,7 @@ io.listen(server).on('connection', function(socket){
   **********************************************/
 
   fs.watchFile("temp_humid/temp.txt", function() {
+      console.log("Detected a change in the temp.txt...");
       var temp = fs.readFileSync("temp_humid/temp.txt").toString();
       var check = {temp: temp, id: "tempData"};
       socket.emit("check", check);
@@ -97,17 +95,12 @@ io.listen(server).on('connection', function(socket){
       socket.emit("check", check);
   });
 
-  fs.watchFile("moist/moist.txt", function() {
+  fs.watchFile("moist/moist2.txt", function() {
       console.log("Detected a change in the moisture.txt...");
-      var text = fs.readFileSync("moist/moist.txt").toString();
+      var text = fs.readFileSync("moist/moist2.txt").toString();
       var check = {moist: text, id: "moistData"};
       socket.emit("check", check);
+      console.log("Sent the Moisture Check!!");
   });
-
- // fs.watchFile("#", function() {
- //     var text = fs.readFileSync("#").toString();
- //     var check = {status: text, id: "#"};
- //     socket.emit("check", check);
- // });
 
 });

@@ -1,4 +1,4 @@
-.teardrop {
+#teardrop center {
     background-color: #005df4;
     display: block;
     width: 80px;
@@ -16,6 +16,7 @@
 
 #humidText {
     -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
     font-size: 20px;
     font-weight: bold;
 }

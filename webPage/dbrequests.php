@@ -4,7 +4,13 @@
     $plantID = 1; // If this is the first load, pull in the first plant
     $plantID = $_GET['varable1'];
 
-    echo "<script>console.log('plantID = " . $plantID . "');        </script>";    
+    echo "<script>console.log('plantID = " . $plantID . "');        </script>";
+    
+    $tempMin;
+    $tempMax;
+    $humidMin;
+    $humidMax;
+    
 
     if ($plantID != '')
     {
@@ -14,16 +20,19 @@
            {
               foreach($db->query("SELECT high_humid, lowest_humid FROM humid WHERE id = " . $row['humid_id']) as $humid)
               {
-                  echo '<script>'
-                  echo "var tempMin = " . $temp['lowest_temp'] . ";";
-                  echo "var tempMax = " . $temp['high_temp'] . ";";
-                  echo "var humidMin = " . $humid['lowest_humid'] . ";";
-                  echo "var humidMax = " . $humid['high_humid'] . ";";
-                  echo "console.log('tempMin = ' tempMin);";
-                  echo "console.log('tempMax = ' tempMax);";
-                  echo "console.log('humidMin = ' humidMin);";
-                  echo "console.log('humidMax = ' humidMax);";
-                  echo '</script>';
+                  $tempMin = $temp['lowest_temp'];
+                  $tempMax = $temp['high_temp'];
+                  $humidMin = $humid['lowest_humid'];
+                  $humidMax = $humid['high_humid'];
+                  
+                  
+        echo "<script>console.log('tempMin = " . $tempMin . "');   </script>";
+        echo "<script>console.log('tempMax = " . $tempMax . "');   </script>";
+        echo "<script>console.log('humidMin = " . $humidMin . "'); </script>";
+        echo "<script>console.log('humidMax = " . $humidMin . "'); </script>";   
+                  
+                  echo "<script>var tempMin = $tempMin;</script>";
+        
                   
               } 
            }

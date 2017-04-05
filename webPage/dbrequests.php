@@ -14,17 +14,17 @@
            {
               foreach($db->query("SELECT high_humid, lowest_humid FROM humid WHERE id = " . $row['humid_id']) as $humid)
               {
-                  /*echo '<script>\n'
-                  echo "var tempMin = " . $temp['lowest_temp'] . ";\n";
-                  echo "var tempMax = " . $temp['high_temp'] . ";\n";
-                  echo "var humidMin = " . $humid['lowest_humid'] . ";\n";
-                  echo "var humidMax = " . $humid['high_humid'] . ";\n";
-                  echo "console.log('tempMin = ' tempMin);\n";
-                  echo "console.log('tempMax = ' tempMax);\n";
-                  echo "console.log('humidMin = ' humidMin);\n";
-                  echo "console.log('humidMax = ' humidMax);\n";
-                  echo '</script>/n';
-                  */
+                  echo '<script>'
+                  echo "var tempMin = " . $temp['lowest_temp'] . ";";
+                  echo "var tempMax = " . $temp['high_temp'] . ";";
+                  echo "var humidMin = " . $humid['lowest_humid'] . ";";
+                  echo "var humidMax = " . $humid['high_humid'] . ";";
+                  echo "console.log('tempMin = ' tempMin);";
+                  echo "console.log('tempMax = ' tempMax);";
+                  echo "console.log('humidMin = ' humidMin);";
+                  echo "console.log('humidMax = ' humidMax);";
+                  echo '</script>';
+                  
               } 
            }
         }        

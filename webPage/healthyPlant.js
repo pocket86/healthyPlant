@@ -66,7 +66,7 @@ function updateHumid(check){
     
     console.log("updateHumid function...");
     var humidInt = parseInt(check.humid);
-    document.getElementById('humidText').innerHTML = humidInt;
+    document.getElementById('humidText').innerHTML = humidInt + "%";
     
     if(humidInt < 10){
         document.getElementsByClassName("teardrop").style.background="lightskyblue";

@@ -183,12 +183,6 @@
                 </div>
                 <div class="spacer"></div>
             </div>
-            <div class="dataItem"></div>
-            <div class="dataItem" id="dataTable">
-                <div class="spacer"></div>
-                <div class="dataBox">
-                </div>
-            </div>
         </div>        
     </div>
     <!-- Footer -->

@@ -100,6 +100,7 @@ io.listen(server).on('connection', function(socket){
       var text = fs.readFileSync("moist/moist2.txt").toString();
       var check = {moist: text, id: "moistData"};
       socket.emit("check", check);
+	console.log("The check that will be sent: " + check.moist);
       console.log("Sent the Moisture Check!!");
   });
 

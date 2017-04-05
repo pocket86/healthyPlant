@@ -8,5 +8,5 @@ moist = str(moist)
 time.sleep(3)
 print "Moisture is " 
 print moist
-moistFile = open('/moist.txt', 'w')
+moistFile = open('/moist2.txt', 'w')
 moistFile.write(moist)

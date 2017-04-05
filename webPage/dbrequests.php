@@ -62,11 +62,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width">
     <title>Healthy Plants | plant environment data analytics </title>
-    <!-- My stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/therm.css">
-    <link rel="stylesheet" type="text/css" href="css/humid.css">
-    <link rel="stylesheet" type="text/css" href="css/moist.css">
+    
     <!-- Fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <script language="JavaScript" src="healthyPlant.js"></script>
@@ -88,10 +84,11 @@
         socket.on('check', function(check){
     
             console.log('Got the check!');
+	    console.log(check);
             //send the check to the function router
             router(check);
             <?php
-            echo "$.post('insert.php', { plant: $plantID, temp: tempInt, humid: humidInt }, moist: moistInt );";
+            echo "$.post('insert.php', { plant: $plantID, temp: tempInt, humid: humidInt , moist: moistInt}); ";
             ?>
         });
         
@@ -196,6 +193,12 @@
     </footer>
 
 </body>
+
+<!-- My stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/therm.css">
+    <link rel="stylesheet" type="text/css" href="css/humid.css">
+    <link rel="stylesheet" type="text/css" href="css/moist.css">
 
 </html>
 

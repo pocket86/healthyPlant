@@ -85,11 +85,14 @@
         });
 
         //This will listen for a reponse from the server after each check
-        socket.on('check' $plantID, function(check){
+        socket.on('check', function(check){
     
-        console.log('Got the check!');
-        //send the check to the function router
-        router(check);
+            console.log('Got the check!');
+            //send the check to the function router
+            router(check);
+            <?php
+            echo "$.post('insert.php', { plant: $plantID, temp: tempInt, humid: humidInt }, moist: moistInt );";
+            ?>
         });
         
     </script>

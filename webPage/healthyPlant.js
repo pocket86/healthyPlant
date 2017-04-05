@@ -4,7 +4,7 @@ var tempInt, humidInt, moistInt;
 * This function will route the element to be 
 * updated based off the id passed in from the server
 *****************************************************/
-function router(check, plant){
+function router(check){
     
    console.log("Router function...");
 
@@ -16,7 +16,6 @@ function router(check, plant){
        updateMoisture(check);
    } else if (check.id === "lightData"){
        updateLight(check);
-       //$.post("insert.php", { plant: plant, temp: tempInt, humid: humidInt }, moist: moistInt );
    } 
 }
 

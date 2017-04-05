@@ -12,9 +12,9 @@ function router(check){
       updateTemp(check);
    } else if (check.id === "humidData"){
       updateHumid(check);
+      console.log("temp Value = " + tempInt);
    } else if (check.id === "moistData"){
        updateMoisture(check);
-       console.log("temp Value = " + tempInt);
    } else if (check.id === "lightData"){
        updateLight(check);
    } 

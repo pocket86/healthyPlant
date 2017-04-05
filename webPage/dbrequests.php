@@ -28,6 +28,9 @@
                   */
                   
                   echo "<script>var tempMin = " . $temp['lowest_temp'] . "; console.log('tempMin = ' + tempMin);   </script>";
+                  echo "<script>var tempMax = " . $temp['high_temp'] . "; console.log('tempMax = ' + tempMax);   </script>";
+                  echo "<script>var humidMin = " . $humid['lowest_humid'] . "; console.log('tempMin = ' + tempMin);   </script>";
+                  echo "<script>var humidMax = " . $humid['high_humid'] . "; console.log('tempMax = ' + tempMax);   </script>";
                   /*
                   echo "<script>console.log('tempMax = " . $tempMax . "');   </script>";
                   echo "<script>console.log('humidMin = " . $humidMin . "'); </script>";

@@ -1,3 +1,5 @@
+ console.log('tempMin = ' + tempMin);
+
 /*****************************************************
 * This function will route the element to be 
 * updated based off the id passed in from the server

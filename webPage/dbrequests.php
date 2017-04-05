@@ -40,12 +40,12 @@
 		
 	if($_POST['newPlant']!=''){
 		$stmt = $db->prepare("INSERT INTO plants(name, sci_name, temp_id, humid_id, light_id, moist_id) 						VALUES(:name, :sci_name, :temp, :humid, light, moist)");
-		$stmt->bindParam(":name", $newtopic, PDO::PARAM_STR, 20);
-        $stmt->bindParam(":sci_name", $newtopic, PDO::PARAM_STR, 256);
-		$stmt->bindParam(":temp", $newtopic, PDO::PARAM_INT);
-		$stmt->bindParam(":humid", $newtopic, PDO::PARAM_INT);
-		$stmt->bindParam(":light", $newtopic, PDO::PARAM_INT);
-		$stmt->bindParam(":moist", $newtopic, PDO::PARAM_INT);
+		$stmt->bindParam(":name", $name, PDO::PARAM_STR, 20);
+        $stmt->bindParam(":sci_name", $sci_name, PDO::PARAM_STR, 256);
+		$stmt->bindParam(":temp", $tempID, PDO::PARAM_INT);
+		$stmt->bindParam(":humid", $humidID, PDO::PARAM_INT);
+		$stmt->bindParam(":light", $lightID, PDO::PARAM_INT);
+		$stmt->bindParam(":moist", $moistID, PDO::PARAM_INT);
 		$stmt->execute();
 	}
 	
@@ -176,6 +176,11 @@
                 <div class="spacer"></div>
             </div>
             <div class="dataItem"></div>
+            <div class="dataItem" id="dataTable">
+                <div class="spacer"></div>
+                <div class="dataBox">
+                </div>
+            </div>
         </div>        
     </div>
     <!-- Footer -->

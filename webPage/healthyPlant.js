@@ -1,3 +1,5 @@
+var tempInt, humidInt, moistInt;
+
 /*****************************************************
 * This function will route the element to be 
 * updated based off the id passed in from the server
@@ -14,7 +16,8 @@ function router(check){
        updateMoisture(check);
    } else if (check.id === "lightData"){
        updateLight(check);
-   }
+   } else
+       console.log("temp Value = " + tempInt);
 }
 
 function runChecks(){
@@ -31,7 +34,7 @@ function updateTemp(check) {
     console.log("updateTemp function...");
     document.getElementById("tempText").innerHTML = check.temp + "&deg;";
     //now add the changes for tempText and amount class style: bottom and height
-    var tempInt = parseInt(check.temp);
+    tempInt = parseInt(check.temp);
     if (tempInt < tempMin) {
         document.getElementById("tempText").style.bottom = "25%";
         document.getElementById("amount").style.height = "25%";
@@ -65,7 +68,7 @@ function updateHumid(check){
     console.log('humidMax = ' + humidMax);
     
     console.log("updateHumid function...");
-    var humidInt = parseInt(check.humid);
+    humidInt = parseInt(check.humid);
     document.getElementById('humidText').innerHTML = humidInt + "%";
     
     if(humidInt < humidMin){
@@ -81,7 +84,7 @@ function updateMoisture(check){
     
     
     console.log("updateMiosture function...");
-    var moistInt = parseInt(check.moist);
+    moistInt = parseInt(check.moist);
     if(moistInt){
         var water = document.getElementById("water");
         water.style.height="250px";

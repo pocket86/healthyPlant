@@ -1,7 +1,7 @@
 <?php include 'dbaccess.php';?>
 <?php
 
-    $plantID = $_GET['id'];
+    $plantID = $_GET['varable1'];
 
     echo "<script>console.log('plantID = " . $plantID . "');        </script>";
     

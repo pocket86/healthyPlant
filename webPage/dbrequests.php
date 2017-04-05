@@ -1,15 +1,10 @@
 <?php include 'dbaccess.php';?>
 <?php
-
+    
+    $plantID = 1; // If this is the first load, pull in the first plant
     $plantID = $_GET['varable1'];
 
-    echo "<script>console.log('plantID = " . $plantID . "');        </script>";
-    
-    $tempMin;
-    $tempMax;
-    $humidMin;
-    $humidMax;
-    
+    echo "<script>console.log('plantID = " . $plantID . "');        </script>";    
 
     if ($plantID != '')
     {
@@ -19,21 +14,16 @@
            {
               foreach($db->query("SELECT high_humid, lowest_humid FROM humid WHERE id = " . $row['humid_id']) as $humid)
               {
-                  $tempMin = $temp['lowest_temp'];
-                  $tempMax = $temp['high_temp'];
-                  $humidMin = $humid['lowest_humid'];
-                  $humidMax = $humid['high_humid'];
-                  
-                  
-        echo "<script>console.log('tempMin = " . $tempMin . "');
-        </script>";
-        echo "<script>console.log('tempMax = " . $tempMax . "');
-        </script>";
-        echo "<script>console.log('humidMin = " . $humidMin . "');
-        </script>";
-        echo "<script>console.log('humidMax = " . $humidMin . "');
-        </script>";          
-        
+                  echo '<script>\n'
+                  echo "var tempMin = " . $temp['lowest_temp'] . ";\n";
+                  echo "var tempMax = " . $temp['high_temp'] . ";\n";
+                  echo "var humidMin = " . $humid['lowest_humid'] . ";\n";
+                  echo "var humidMax = " . $humid['high_humid'] . ";\n";
+                  echo "console.log('tempMin = ' tempMin);\n";
+                  echo "console.log('tempMax = ' tempMax);\n";
+                  echo "console.log('humidMin = ' humidMin);\n";
+                  echo "console.log('humidMax = ' humidMax);\n";
+                  echo '</script>/n';
                   
               } 
            }
@@ -70,22 +60,7 @@
 	
     if($_POST['newPlant']!='')
 	   $newPlantId = $db->lastInsertId();
-	
-	//echo "<br>$newTopicId";
-	
-	/*if (!empty($topics)){
-		//echo "In the link IF";
-			foreach($topics as $row){
-				//echo "in the link FOREACH $row";
-				$topicId = $db->query("SELECT id FROM topics WHERE name='$row'");
-				$stmt = $db->prepare("INSERT INTO link(scripture_id, topics_id)
-				VALUES(:scripture_id, :topics_id)");
-				$stmt->bindParam(":scripture_id", $newId, PDO::PARAM_INT);
-				$stmt->bindParam(":topics_id", $topicId, PDO::PARAM_INT);
-				$stmt->execute();
-				//echo "<br>$topicId";
-				}
-	}*/
+
 ?>
 
 <!DOCTYPE html>
